@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NewAccountComponent } from './new-account/new-account.component';
@@ -13,7 +14,8 @@ import { AccountService } from './account.service';
     AccountComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [AccountService],
   bootstrap: [AppComponent]

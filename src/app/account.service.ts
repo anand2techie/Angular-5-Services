@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { EventEmitter } from 'protractor';
 
 @Injectable()
 export class AccountService {
@@ -24,12 +25,17 @@ export class AccountService {
     }
 ];
 
-updateAccount(){
+accountUpdated:EventEmitter;
 
+updateAccount(ind,accountname,accountstatus){
+    alert('update accout called... '+accountname+' '+accountstatus+' '+ind);
+    this.accounts[ind].name=accountname;
+    this.accounts[ind].status=accountstatus;
 }
 
-addAccount(){
-  
+addAccount(accountname:string,accountstatus:string){
+  alert("Inside service: "+accountname+ ' '+accountstatus)
+  this.accounts.push({name:accountname,status:accountstatus});
 }
 
 }

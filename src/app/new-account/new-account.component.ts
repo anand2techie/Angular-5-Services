@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from '../account.service';
 
 @Component({
   selector: 'app-new-account',
@@ -7,13 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewAccountComponent implements OnInit {
 
-  constructor() { }
+  constructor(private accountService:AccountService) { }
 
   ngOnInit() {
   }
 
-  addAccount(accoutname:string,accountstatus:string){
-    alert(accoutname+' with a status of '+accountstatus)
+  addAccount(accountname:string,accountstatus:string){
+    alert("Inside component: " + accountname+' with a status of '+accountstatus)
+    //I want to access AccountService by calling addAccount
+    this.accountService.addAccount(accountname,accountstatus);
+
+
   }
 
 }

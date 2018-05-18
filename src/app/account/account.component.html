@@ -1,3 +1,12 @@
-Account name: {{account.name}}
-Account status: {{account.status}}
+<form>
+    <div class="form-group">
+        <input type="text" class="form-control" name="accountname" id="accountname" [(ngModel)]="account.name" />
+        <select class="form-control" #accountstatus>
+            <option value="active">active</option>
+            <option value="Inactive">Inactive</option>
+            <option value="unknown">unknown</option>
+        </select>
+        <button class="btn btn-primary" class="form-control" (click)="updateAccount(account.name,accountstatus.value)">Update</button>
+    </div>
 <br>
+</form>

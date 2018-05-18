@@ -2,6 +2,7 @@
   <div class="row">
     <app-new-account></app-new-account>
 
-    <app-account *ngFor="let acc of accounts" [account]="acc"></app-account>
+    <!-- i = index; -->
+    <app-account *ngFor="let acc of accounts;let i = index" [account]="acc" [ind]="i"></app-account>
   </div>
 </div>
